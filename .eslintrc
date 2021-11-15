@@ -6,7 +6,6 @@
       "error",
       {
         "singleQuote": true,
-        "arrowParens": "avoid",
         "printWidth": 150
       }
     ]
