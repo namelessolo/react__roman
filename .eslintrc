@@ -6,7 +6,8 @@
       "error",
       {
         "singleQuote": true,
-        "printWidth": 150
+        "printWidth": 150,
+        "tabWidth": 2
       }
     ]
   },
