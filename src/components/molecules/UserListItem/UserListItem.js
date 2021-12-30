@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Button from 'components/atoms/Button/Button';
 import { Wrapper, StyledAverage, StyledInfo } from './UserListItem.styles';
 
-const UserListItem = ({ userData: { average, name, attendance = '0%' } }) => {
+const UserListItem = ({ deleteUser, userData: { average, name, attendance = '0%' } }) => {
   return (
     <Wrapper>
       <StyledAverage value={average}>{average}</StyledAverage>
@@ -11,7 +11,7 @@ const UserListItem = ({ userData: { average, name, attendance = '0%' } }) => {
         <p>{name}</p>
         <p>attendance: {attendance}</p>
       </StyledInfo>
-      <Button></Button>
+      <Button onClick={() => deleteUser(name)} />
     </Wrapper>
   );
 };
