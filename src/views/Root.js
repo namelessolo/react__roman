@@ -1,25 +1,32 @@
 import React from 'react';
-import UserList from 'components/organisms/UserList/UserList.js';
-import styled, { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import GlobalStyle from 'assets/styles/GlobalStyle.js';
 import { theme } from 'assets/styles/theme';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Wrapper } from './Root.styled';
+import MainTemplate from 'components/templates/MainTemplate/MainTemplate';
+import AddUser from './AddUser';
+import Dashboard from './Dashboard';
+import UsersProvider from 'providers/UsersProvider';
 
-const Wrapper = styled.div`
-  background-color: ${({ theme }) => theme.colors.lightGrey};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-`;
-
-const Root = () => (
-  <ThemeProvider theme={theme}>
-    <GlobalStyle />
-    <Wrapper>
-      <UserList />
-    </Wrapper>
-  </ThemeProvider>
-);
+const Root = () => {
+  return (
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <MainTemplate>
+          <UsersProvider>
+            <Wrapper>
+              <Routes>
+                <Route path="/" element={<Dashboard />} />
+                <Route path="/add-user" element={<AddUser />} />
+              </Routes>
+            </Wrapper>
+          </UsersProvider>
+        </MainTemplate>
+      </ThemeProvider>
+    </BrowserRouter>
+  );
+};
 
 export default Root;

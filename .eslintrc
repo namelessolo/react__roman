@@ -3,7 +3,7 @@
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": [
-      null,
+      "off",
       {
         "singleQuote": true,
         "printWidth": 150,
