@@ -16,13 +16,13 @@ const UsersProvider = ({ children }) => {
   };
 
   const handleAddUser = (values) => {
-    const newUser = {
-      name: values.name,
-      attendance: values.attendance,
-      average: values.average,
-    };
+    // const newUser = {
+    //   name: values.name,
+    //   attendance: values.attendance,
+    //   average: values.average,
+    // };
 
-    setUsers([newUser, ...users]);
+    setUsers([values, ...users]);
   };
   return (
     <UsersContext.Provider
